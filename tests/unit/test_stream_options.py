@@ -1,8 +1,8 @@
 import pytest
 from pyspark.sql import SparkSession
-from sync.stream_options import StreamOptions
-from utils.config import *
-from utils.exceptions import IllegalArgumentException
+from file_streaming.sync.stream_options import StreamOptions
+from file_streaming.utils.exceptions import IllegalArgumentException
+from file_streaming.utils.config import *
 
 
 @pytest.fixture

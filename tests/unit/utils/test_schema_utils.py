@@ -1,8 +1,8 @@
 from pyspark.sql.types import *
 import pytest
 
-from utils.exceptions import IllegalArgumentException
-from utils.schema_utils import schema_from_config
+from file_streaming.utils.exceptions import IllegalArgumentException
+from file_streaming.utils.schema_utils import schema_from_config
 
 
 def test_simple_schema():

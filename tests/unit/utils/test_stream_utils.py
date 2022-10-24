@@ -1,9 +1,9 @@
 import pytest
 from pyspark.sql import SparkSession
-from utils.config import *
-from utils.exceptions import IllegalArgumentException
-from utils.stream_utils import load
-from utils.schema_utils import schema_from_config
+from file_streaming.utils.config import *
+from file_streaming.utils.exceptions import IllegalArgumentException
+from file_streaming.utils.stream_utils import load
+from file_streaming.utils.schema_utils import schema_from_config
 
 
 @pytest.fixture

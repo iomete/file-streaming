@@ -1,10 +1,10 @@
 import pytest
 
-from sync.file_sync import FileSync
-from utils.stream_utils import load
+from file_streaming.sync.file_sync import FileSync
+from file_streaming.utils.stream_utils import load
 from tests.integration._spark_session import get_spark_session
-from utils.config import *
-from utils.exceptions import IllegalArgumentException
+from file_streaming.utils.config import *
+from file_streaming.utils.exceptions import IllegalArgumentException
 
 checkpoint = "checkpointLocation"
 
