@@ -14,6 +14,8 @@ Transfer files to iceberg continuously.
 ## File formats
 Tested file formats.
 - CSV
+- JSON
+- S3-SQS
 
 ## Job creation
 
@@ -101,19 +103,9 @@ Specify the following parameters (these are examples, you can change them based 
 </tbody>
 </table>
 
-Create Spark Job
-![Create Spark Job.png](docs/img/job-creation-deployment.png)
-
-Create Spark Job - Instance
-
->You can use **Environment Variables** to store your sensitive data like password, secrets, etc. Then you can use these variables in your config file using the <code>${ENV_NAME}</code> syntax.
-
-![Create Spark Job.png](docs/img/job-creation-instance.png)
-
-Create Spark Job - Application Config
-![Create Spark Job - Application Config.png](docs/img/job-creation-configuration.png)
-## If you want to specify schema add schema under to source configuration.
-Note: For JSON and sqs data source, schema is required.
+## Schema
+If you want to specify schema, add schema under to source configuration.
+Note: Schema is required for the JSON and sqs data source.
 ```
 schema: [
   { name:channel, type:string },
@@ -126,8 +118,8 @@ schema: [
   { name:receivedAt, type:timestamp }
 ]
 ```
-## Amazon S3 Source with Amazon SQS (recommended)
-If you have a SQS queue listen to bucket, you can define the queue as data source.
+## Amazon S3 Source with Amazon SQS Source (recommended)
+If you have a SQS queue listen to bucket, you can define the queue as data source under the source.
 ```
 queue: {
   URL: https://sqs.eu-central-1.amazonaws.com/{account_number}/{queue_name}
@@ -135,6 +127,18 @@ queue: {
   log_polling_wait_time_seconds: 5
 }
 ```
+
+Create Spark Job
+![Create Spark Job.png](docs/img/job-creation-deployment.png)
+
+Create Spark Job - Instance
+
+>You can use **Environment Variables** to store your sensitive data like password, secrets, etc. Then you can use these variables in your config file using the <code>${ENV_NAME}</code> syntax.
+
+![Create Spark Job.png](docs/img/job-creation-instance.png)
+
+Create Spark Job - Application Config
+![Create Spark Job - Application Config.png](docs/img/job-creation-configuration.png)
 
 ## Tests
 
